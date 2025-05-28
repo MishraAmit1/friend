@@ -13,21 +13,16 @@ const Expertise = () => {
 
   // GSAP animations
   useGSAP(() => {
-    // Fade in left column
     gsap.fromTo(
       leftColumnRef.current,
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, duration: 0.6, ease: "power2.out", delay: 0.1 }
     );
-
-    // Fade in right column
     gsap.fromTo(
       rightColumnRef.current,
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, duration: 0.6, ease: "power2.out", delay: 0.5 }
     );
-
-    // Animate progress bars
     progressBarsRef.current.forEach((bar, index) => {
       gsap.fromTo(
         bar,
@@ -44,58 +39,51 @@ const Expertise = () => {
 
   // Skills data
   const skills = [
-    { name: "HTML", value: 95, color: "bg-blue-600" },
-    { name: "CSS", value: 85, color: "bg-yellow-400" },
-    { name: "PHP", value: 90, color: "bg-red-600" },
-    { name: "Javascript", value: 90, color: "bg-red-600" },
-    { name: "Angular JS", value: 95, color: "bg-gray-600" },
-    { name: "Wordpress", value: 85, color: "bg-teal-500" },
+    { name: "Social Media Marketing (SMM)", value: 90, color: "bg-blue-600" },
+    { name: "Performance Marketing", value: 83, color: "bg-yellow-400" },
+    { name: "SEO & Content Marketing", value: 85, color: "bg-red-600" },
+    { name: "Email Marketing", value: 85, color: "bg-red-600" },
+    { name: "Branding & Strategy ", value: 95, color: "bg-gray-600" },
+    { name: "Analytics & Reporting", value: 90, color: "bg-teal-500" },
+    { name: "Team Leadership", value: 90, color: "bg-pink-500" },
   ];
 
   // Experience and Education data
   const experience = [
     {
-      title: "UI Designer",
-      period: "2000 - 2045",
-      company: "Apex Software Inc",
+      title: "Digital Marketer & Team Lead",
+      period: "April 2023 – Present",
+      company: "Softyoug Digital Marketing Agency, Vapi",
+      achievements: [
+        "Spearheading digital marketing strategies for multiple clients across industries.",
+        "Managing social media accounts, running ad campaigns, and optimizing for better ROI.",
+        "Leading a team of Designers and interns, overseeing day-to-day digital activities.",
+        "Working directly with clients to understand goals and deliver targeted marketing solutions.",
+        "Created content calendars, ad creatives, and growth strategies that resulted in improved traffic, engagement, and lead generation.",
+      ],
     },
     {
-      title: "Product Designer",
-      period: "2000 - 2045",
-      company: "Apex Software Inc",
-    },
-    {
-      title: "Web Designer",
-      period: "2000 - 2045",
-      company: "Apex Software Inc",
-    },
-    {
-      title: "Apps Designer",
-      period: "2000 - 2045",
-      company: "Apex Software Inc",
+      title: "Founder | Digital Marketing Educator",
+      period: "2024 – Present",
+      company: "Soch Digital",
+      achievements: [
+        "Building a learning platform for digital marketing beginners and small business owners.",
+        "Sharing tips, tutorials, and simplified marketing knowledge through Instagram & social media.",
+        "Helping businesses understand the power of digital and implement effective strategies.",
+      ],
     },
   ];
 
   const education = [
     {
-      title: "UI Design Course",
-      period: "2000 - 2045",
-      institute: "Cambridge University",
+      title: "Master of Business Administration (MBA) – Digital Marketing",
+      period: "2024 - 2025",
+      institute: "MIT School of Distance Education (MITSDE) — Pune, India",
     },
     {
-      title: "IOS Development",
-      period: "2000 - 2045",
-      institute: "Cambridge University",
-    },
-    {
-      title: "Web Design",
-      period: "2000 - 2045",
-      institute: "Cambridge University",
-    },
-    {
-      title: "Apps Design",
-      period: "2000 - 2045",
-      institute: "Cambridge University",
+      title: "Bachelor of Computer Application (BCA)",
+      period: "2021 - 2023",
+      institute: "Rajju Shroff Rofel University - Vapi, Gujarat",
     },
   ];
 
@@ -187,7 +175,7 @@ const Expertise = () => {
                   >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                       {experience.map((exp, index) => (
-                        <div key={index}>
+                        <div key={index} className="mb-6">
                           <h5 className="text-base sm:text-lg font-medium text-white">
                             {exp.title}
                           </h5>
@@ -195,9 +183,14 @@ const Expertise = () => {
                           <p className="text-blue-600 text-sm mb-1">
                             {exp.period}
                           </p>
-                          <h6 className="text-sm sm:text-base text-gray-300 mb-0">
+                          <h6 className="text-sm sm:text-base text-gray-300 mb-2">
                             {exp.company}
                           </h6>
+                          <ul className="list-disc pl-5 text-sm text-gray-300">
+                            {exp.achievements.map((achievement, idx) => (
+                              <li key={idx}>{achievement}</li>
+                            ))}
+                          </ul>
                         </div>
                       ))}
                     </div>
@@ -207,10 +200,7 @@ const Expertise = () => {
                       activeTab === "tab-2" ? "block" : "hidden"
                     }`}
                   >
-                    <div
-                      className="grid grid-cols-1 sm:grid-cols-2 gap-4	bytecode
- sm:gap-5"
-                    >
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                       {education.map((edu, index) => (
                         <div key={index}>
                           <h5 className="text-base sm:text-lg font-medium text-white">

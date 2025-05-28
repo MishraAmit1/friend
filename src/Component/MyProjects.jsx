@@ -1,8 +1,9 @@
-import React from "react";
-import GitHubIcon from "../assets/images/Techno/github.svg";
 import project1 from "../assets/images/project1.png";
 import project2 from "../assets/images/project2.png";
 import project3 from "../assets/images/project3.png";
+import project4 from "../assets/images/project4.png";
+import project5 from "../assets/images/project5.png";
+import project6 from "../assets/images/project6.png";
 import Tilt from "react-parallax-tilt";
 
 const MyProjects = () => {
@@ -10,38 +11,68 @@ const MyProjects = () => {
     {
       id: 1,
       image: project1,
-      title: "Gym Management System",
+      title: "Real Estate",
       description: [
-        "Real-time membership approval and plan-based access.",
-        "Responsive UI for all devices.",
-        "Comprehensive admin dashboard for management.",
+        "Helped real estate brands increase lead generation through targeted Meta Ads and Google Ads.",
+        "Created location-based lead forms",
+        "Built trust through content showcasing projects, testimonials & site progress",
+        "Focused on high-quality lead nurturing and CRM coordination",
       ],
-      link: "https://github.com/MishraAmit1/mishrajii-gym",
-      tags: ["Html", "Css", "JavaScript", "Php", "MySQL"],
     },
     {
       id: 2,
       image: project2,
-      title: "Top 15+ JavaScript Projects",
+      title: "Education (Schools, Institutes & Online Courses)",
       description: [
-        "Created 18+ interactive JS projects for learning.",
-        "Live previews and easy code download.",
-        "Boosted user engagement with hands-on projects.",
+        "Promoted institutions with a focus on admissions, awareness, and engagement.",
+        "Developed admission-focused ad campaigns",
+        "Created engaging content for parents & students",
+        "Managed content calendars for regular and exam-season promotions",
       ],
-      link: "https://github.com/MishraAmit1/javascript-projects-for-beginners",
-      tags: ["Html", "Css", "JavaScript"],
     },
     {
       id: 3,
       image: project3,
-      title: "Event Management System",
+      title: "Machinery / Calibration Industry",
       description: [
-        "Web-based system for managing events.",
-        "User registration, event categorization, and tracking.",
-        "Admin panel for managing users and events.",
+        "B2B strategy for technical products and niche services.",
+        "Focused on brand visibility via SEO and LinkedIn",
+        "Designed educational content for industrial products and services",
+        "Generated quality leads using professional and technical creatives",
       ],
-      link: "https://www.digitalmesh.com/blog/wp-content/uploads/2020/05/404-error.jpg",
-      tags: ["React", "Node.js", "Express", "MongoDB", "CSS"],
+    },
+    {
+      id: 4,
+      image: project4, // Placeholder; replace with actual image
+      title: "Food, Café & Restaurant",
+      description: [
+        "Improved footfall and online orders through creative storytelling.",
+        "Designed mouth-watering social media content and reels",
+        "Managed offers, reviews, and Google Business listings",
+        "Ran geo-targeted promotions to drive in-store traffic",
+      ],
+    },
+    {
+      id: 5,
+      image: project5, // Placeholder; replace with actual image
+      title: "Automotive Industry",
+      description: [
+        "Worked with auto service centers, detailing studios, and dealerships.",
+        "Promoted services via Instagram/Facebook Ads",
+        "Designed before-after visuals and reviews for trust building",
+        "Managed local SEO and service-based lead generation",
+      ],
+    },
+    {
+      id: 6,
+      image: project6, // Placeholder; replace with actual image
+      title: "Hospitals, Gyms & Internet Providers",
+      description: [
+        "Handled a mix of healthcare, fitness, and service-based local businesses.",
+        "Ran health awareness and gym transformation campaigns",
+        "Focused on lead generation and appointment bookings",
+        "Designed informative content, reels, and engagement polls",
+      ],
     },
   ];
 
@@ -53,11 +84,11 @@ const MyProjects = () => {
           Projects.
         </h1>
         <p className="text-gray-500 mb-8">
-          Following projects showcase my skills and experience through
-          real-working examples of my work. Each project is briefly described
-          with links to code repositories and live demos. It reflects my ability
-          to solve complex problems, work with different technologies, and
-          manage projects effectively.
+          Over the past 1.5 years, I’ve had the opportunity to craft and execute
+          digital marketing strategies across a wide range of industries. From
+          local businesses to service-based companies, each project helped me
+          sharpen my skills and adapt strategies to fit unique audience needs,
+          goals, and platforms — while delivering measurable results.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
@@ -69,7 +100,7 @@ const MyProjects = () => {
               transitionSpeed={2500}
             >
               <div
-                className="bg-[#1B1535] text-white rounded-lg shadow-md p-4 relative flex flex-col justify-between"
+                className="bg-[#1B1535] text-white rounded-lg shadow-md p-4 relative flex flex-col overflow-y-auto"
                 style={{
                   height: "450px",
                   minHeight: "450px",
@@ -81,42 +112,17 @@ const MyProjects = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="rounded-lg w-full h-50 object-cover"
+                    className="rounded-lg w-full h-48 object-cover"
                   />
-                  {/* GitHub Icon */}
-                  <div className="absolute top-1 right-1 cursor-pointer z-50 bg-slate-300 rounded-3xl p-1 hover:shadow-glow">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        src={GitHubIcon}
-                        alt="GitHub Icon"
-                        className="w-7 h-7"
-                      />
-                    </a>
-                  </div>
                 </div>
                 {/* Project Content */}
-                <div className="mt-4">
+                <div className="mt-2 flex-grow">
                   <h3 className="text-xl font-bold">{project.title}</h3>
                   <ul className="mt-2 text-sm space-y-1">
                     {project.description.map((line, index) => (
-                      <li key={index}>{line}</li>
+                      <li key={index}>{"✅ " + line}</li>
                     ))}
                   </ul>
-                </div>
-                {/* Tags */}
-                <div className="flex flex-wrap mt-4 gap-2">
-                  {project.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="text-xs font-medium bg-blue-200 text-blue-800 px-2 py-1 rounded"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
                 </div>
               </div>
             </Tilt>

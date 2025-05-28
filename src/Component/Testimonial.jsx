@@ -21,22 +21,22 @@ const Testimonial = () => {
     {
       image: testimonial1,
       quote:
-        "Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.",
-      name: "Client Name",
+        "The digital strategies implemented significantly boosted our lead quality and helped us reach the right buyers efficiently. The team was professional and proactive throughout.",
+      name: "Real Estate Industry",
       profession: "Profession",
     },
     {
       image: testimonial2,
       quote:
-        "Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.",
-      name: "Client Name",
+        "The content and advertising approach perfectly captured our brand’s personality, driving more foot traffic and online orders in just a few months. Very satisfied with the results!",
+      name: "Food & Restaurant Business",
       profession: "Profession",
     },
     {
       image: testimonial3,
       quote:
-        "Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.",
-      name: "Client Name",
+        "With a targeted marketing plan and timely campaign optimizations, we saw a strong increase in customer sign-ups and brand awareness. The professionalism and expertise made a real difference.",
+      name: "Internet Service Industry",
       profession: "Profession",
     },
   ];
