@@ -12,7 +12,7 @@ import {
 } from "./svgicons/SocialIcons";
 
 // Placeholder image (replace with actual path in your project)
-import profileImage from "../assets/images/profile.png";
+import profileImage from "../assets/images/profile2-removebg-preview.png";
 
 const Home = ({
   scrollToHome,
