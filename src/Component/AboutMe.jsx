@@ -1,57 +1,25 @@
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import about1 from "../assets/images/about-1.jpg";
-import about2 from "../assets/images/about-2.jpg";
+import about1 from "../assets/images/social-media-.jpg"; // Use one of the images
+
 const AboutMe = () => {
-  // State for counter animation
-  const [happyClients, setHappyClients] = useState(0);
-  const [projectsCompleted, setProjectsCompleted] = useState(0);
-
-  // Refs for GSAP animation
+  // Ref for GSAP animation
   const leftColumnRef = useRef(null);
-  const rightColumnRef = useRef(null);
 
-  // GSAP animation
+  // GSAP animation for left column only
   useGSAP(() => {
     gsap.fromTo(
       leftColumnRef.current,
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, duration: 0.6, ease: "power2.out", delay: 0.1 }
     );
-    gsap.fromTo(
-      rightColumnRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.6, ease: "power2.out", delay: 0.5 }
-    );
-  }, []);
-
-  // Counter animation effect
-  useEffect(() => {
-    const animateCounter = (setCounter, target, duration) => {
-      let start = 0;
-      const increment = target / (duration / 16); // 60 FPS
-      const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-          setCounter(target);
-          clearInterval(timer);
-        } else {
-          setCounter(Math.ceil(start));
-        }
-      }, 16);
-      return () => clearInterval(timer);
-    };
-
-    animateCounter(setHappyClients, 1234, 2000);
-    animateCounter(setProjectsCompleted, 1234, 2000);
   }, []);
 
   return (
     <div
       className="bg-black text-white px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 w-full"
-      // id="education"
       id="technologies"
     >
       <div className="container mx-auto py-6 sm:py-8">
@@ -104,48 +72,13 @@ const AboutMe = () => {
                 </button>
               </div>
 
-              {/* Right Column */}
-              <div ref={rightColumnRef} className="w-full lg:w-1/2">
-                <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4">
-                  <div>
-                    <img
-                      className="w-full h-32 sm:h-40 md:h-48 lg:h-56 object-cover rounded-lg"
-                      src={about2}
-                      alt="Team working on a web design project"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      className="w-full h-32 sm:h-40 md:h-48 lg:h-56 object-cover rounded-lg"
-                      src={about1}
-                      alt="Developer coding a website"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col sm:flex-row sm:items-center mb-3">
-                  <h5 className="sm:border-r sm:pr-3 sm:mr-3 text-gray-300 font-medium text-sm sm:text-base mb-2 sm:mb-0">
-                    Happy Clients
-                  </h5>
-                  <h2 className="text-blue-600 font-bold text-2xl sm:text-3xl">
-                    {happyClients}
-                  </h2>
-                </div>
-                <p className="mb-4 text-sm sm:text-base text-gray-300">
-                  Stet no et lorem dolor et diam, amet duo ut dolore vero eos.
-                  No stet est diam amet diam ipsum clita labore dolor duo clita.
-                </p>
-                <div className="flex flex-col sm:flex-row sm:items-center mb-3">
-                  <h5 className="sm:border-r sm:pr-3 sm:mr-3 text-gray-300 font-medium text-sm sm:text-base mb-2 sm:mb-0">
-                    Projects Completed
-                  </h5>
-                  <h2 className="text-blue-600 font-bold text-2xl sm:text-3xl">
-                    {projectsCompleted}
-                  </h2>
-                </div>
-                <p className="mb-0 text-sm sm:text-base text-gray-300">
-                  Stet no et lorem dolor et diam, amet duo ut dolore vero eos.
-                  No stet est diam amet diam ipsum clita labore dolor duo clita.
-                </p>
+              {/* Right Column - Single Image */}
+              <div className="w-full lg:w-1/2">
+                <img
+                  className="w-full h-full object-cover rounded-lg"
+                  src={about1}
+                  alt="Developer coding a website"
+                />
               </div>
             </div>
           </div>

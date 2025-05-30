@@ -158,9 +158,7 @@ const Testimonial = () => {
                 <h5 className="text-lg sm:text-xl font-semibold text-white">
                   {testimonials[currentTestimonial].name}
                 </h5>
-                <span className="text-sm sm:text-base text-gray-400">
-                  {testimonials[currentTestimonial].profession}
-                </span>
+
                 {/* Navigation Dots */}
                 <div className="flex justify-center gap-2 mt-6">
                   {testimonials.map((_, index) => (
