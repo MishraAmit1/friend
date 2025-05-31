@@ -202,7 +202,7 @@ const Home = ({
 
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
               <a
-                href="https://drive.google.com/file/d/12inpT6-AVSEgDUSnTsX8rCC3ctrP2tMi/view?usp=sharing"
+                href="https://drive.google.com/file/d/1pV6pb7NA3n7YI0GY8SLneMD6FsJe0tN2/view?usp=sharing"
                 download
                 className="px-6 py-3 text-sm font-bold text-white transition-all duration-300 rounded-lg md:px-8 md:py-3 md:text-base bg-gradient-to-r from-[#1595b6] to-[#1f2667e6] hover:scale-105 hover:shadow-lg"
               >
