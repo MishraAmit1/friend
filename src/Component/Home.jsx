@@ -1,15 +1,10 @@
-import React, { useCallback, useState, useRef, useEffect } from "react";
+import { useCallback, useState, useRef, useEffect } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { HiOutlineMenuAlt1, HiX } from "react-icons/hi";
 import "./Home.css";
 import particleConfig from "../particlesjs/particleConfig";
-import {
-  AmsLogo,
-  ArrowIconDown,
-  Telephone,
-  Whatsapp,
-} from "./svgicons/SocialIcons";
+import { ArrowIconDown, Telephone, Whatsapp } from "./svgicons/SocialIcons";
 
 // Placeholder image (replace with actual path in your project)
 import profileImage from "../assets/images/profile2-removebg-preview.png";
@@ -18,11 +13,9 @@ const Home = ({
   scrollToHome,
   scrollToAbout,
   scrollToExpertise,
-  scrollToMyProjects,
   scrollToProjects,
   scrollToTestimonial,
   scrollToContact,
-  scrollToFooter,
 }) => {
   const particlesInit = useCallback(async (main) => {
     try {
@@ -72,19 +65,84 @@ const Home = ({
 
       <section className="relative z-10 flex flex-col min-h-screen text-white">
         {/* Header */}
+        <style jsx>{`
+          .rotating-border {
+            animation: rotate 3s linear infinite;
+          }
+
+          @keyframes rotate {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+
+          .gradient-border {
+            background: linear-gradient(
+              45deg,
+              #3b82f6,
+              #8b5cf6,
+              #ec4899,
+              #3b82f6
+            );
+            background-size: 400% 400%;
+            animation: gradientShift 2s ease infinite;
+          }
+
+          @keyframes gradientShift {
+            0%,
+            100% {
+              background-position: 0% 50%;
+            }
+            50% {
+              background-position: 100% 50%;
+            }
+          }
+        `}</style>
         <header className="flex items-center justify-between w-full px-6 py-4 md:px-8 md:py-6">
-          <AmsLogo className="w-12 h-12 md:w-16 md:h-16" />
+          <div className="flex items-center">
+            {/* Rotating Border Logo */}
+            <div className="relative w-16 h-16 md:w-20 md:h-20">
+              {/* Rotating Border with Dots */}
+              <div className="absolute inset-0 animate-spin">
+                {/* Rectangular Border */}
+                <div className="w-full h-full border-2 border-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg p-[2px]">
+                  <div className="w-full h-full bg-black rounded-lg"></div>
+                </div>
+
+                {/* Rotating Dots */}
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                </div>
+                <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2">
+                  <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                </div>
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
+                  <div className="w-3 h-3 bg-pink-500 rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Static Center Text */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h1 className="text-lg md:text-xl font-bold text-white tracking-wider">
+                  DIVYA
+                </h1>
+              </div>
+            </div>
+          </div>
           <div className="flex items-center gap-4 md:gap-6">
             <a
               target="_blank"
-              href="tel:8733073469"
+              href="tel:8866492402"
               rel="noopener noreferrer"
               className="p-2 rounded-full hover:bg-white/10 transition-colors"
             >
               <Telephone className="w-6 h-6" />
             </a>
             <a
-              href="https://wa.me/918733073469?text=Hi, I'm from your Portfolio. I want to know more about your services?"
+              href="https://wa.me/918866492402?text=Hi, I'm from your Portfolio. I want to know more about your services?"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full hover:bg-white/10 transition-colors"
@@ -177,11 +235,9 @@ const Home = ({
             { name: "Home", action: scrollToHome },
             { name: "About Me", action: scrollToAbout },
             { name: "Expertise", action: scrollToExpertise },
-            { name: "My Projects", action: scrollToMyProjects },
             { name: "Projects", action: scrollToProjects },
             { name: "Testimonial", action: scrollToTestimonial },
             { name: "Contact Me", action: scrollToContact },
-            { name: "Footer", action: scrollToFooter },
           ].map((item) => (
             <li key={item.name}>
               <button

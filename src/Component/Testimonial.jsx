@@ -1,11 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-
-// Placeholder images (replace with actual paths in your project)
-import testimonial1 from "../assets/images/testimonial-1.jpg";
-import testimonial2 from "../assets/images/testimonial-2.jpg";
-import testimonial3 from "../assets/images/testimonial-3.jpg";
+import { FaBuilding, FaUtensils, FaWifi } from "react-icons/fa";
 
 const Testimonial = () => {
   // State for current testimonial
@@ -16,28 +12,34 @@ const Testimonial = () => {
   const leftImagesRef = useRef([]);
   const rightImagesRef = useRef([]);
 
-  // Testimonial data
+  // Testimonial data with icon components
   const testimonials = [
     {
-      image: testimonial1,
+      icon: FaBuilding,
+      iconColor: "text-blue-500",
+      bgColor: "bg-blue-100",
       quote:
         "The digital strategies implemented significantly boosted our lead quality and helped us reach the right buyers efficiently. The team was professional and proactive throughout.",
       name: "Real Estate Industry",
-      profession: "Profession",
+      profession: "Property Development",
     },
     {
-      image: testimonial2,
+      icon: FaUtensils,
+      iconColor: "text-orange-500",
+      bgColor: "bg-orange-100",
       quote:
-        "The content and advertising approach perfectly captured our brand’s personality, driving more foot traffic and online orders in just a few months. Very satisfied with the results!",
+        "The content and advertising approach perfectly captured our brand's personality, driving more foot traffic and online orders in just a few months. Very satisfied with the results!",
       name: "Food & Restaurant Business",
-      profession: "Profession",
+      profession: "Hospitality Sector",
     },
     {
-      image: testimonial3,
+      icon: FaWifi,
+      iconColor: "text-green-500",
+      bgColor: "bg-green-100",
       quote:
         "With a targeted marketing plan and timely campaign optimizations, we saw a strong increase in customer sign-ups and brand awareness. The professionalism and expertise made a real difference.",
       name: "Internet Service Industry",
-      profession: "Profession",
+      profession: "Technology Sector",
     },
   ];
 
@@ -45,47 +47,53 @@ const Testimonial = () => {
   useGSAP(() => {
     // Animate left images
     leftImagesRef.current.forEach((img, index) => {
-      gsap.fromTo(
-        img,
-        { opacity: 0, scale: 0 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.6,
-          ease: "power2.out",
-          delay: index * 0.2 + 0.1,
-        }
-      );
+      if (img) {
+        gsap.fromTo(
+          img,
+          { opacity: 0, scale: 0 },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            delay: index * 0.2 + 0.1,
+          }
+        );
+      }
     });
 
     // Animate right images
     rightImagesRef.current.forEach((img, index) => {
-      gsap.fromTo(
-        img,
-        { opacity: 0, scale: 0 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.6,
-          ease: "power2.out",
-          delay: index * 0.2 + 0.1,
-        }
-      );
+      if (img) {
+        gsap.fromTo(
+          img,
+          { opacity: 0, scale: 0 },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            delay: index * 0.2 + 0.1,
+          }
+        );
+      }
     });
   }, []);
 
   // Animate testimonial slide
   useEffect(() => {
-    gsap.fromTo(
-      testimonialRef.current,
-      { opacity: 0, x: 50 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.8,
-        ease: "power2.out",
-      }
-    );
+    if (testimonialRef.current) {
+      gsap.fromTo(
+        testimonialRef.current,
+        { opacity: 0, x: 50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        }
+      );
+    }
   }, [currentTestimonial]);
 
   // Positions for left and right images in a circular pattern
@@ -100,6 +108,18 @@ const Testimonial = () => {
     { top: "45%", right: "10%" },
     { top: "75%", right: "20%" },
   ];
+
+  // Icon component for rendering
+  const IconComponent = ({ testimonial, size = "text-4xl" }) => {
+    const Icon = testimonial.icon;
+    return (
+      <div
+        className={`${testimonial.bgColor} p-4 rounded-full flex items-center justify-center`}
+      >
+        <Icon className={`${testimonial.iconColor} ${size}`} />
+      </div>
+    );
+  };
 
   return (
     <div
@@ -119,76 +139,108 @@ const Testimonial = () => {
         >
           <div className="container mx-auto px-4">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12">
-              Testimonial
+              Industries I've Worked With
             </h1>
             <div className="flex flex-col lg:flex-row justify-center items-center gap-6 relative">
               {/* Left Images */}
               <div className="hidden lg:block relative w-full lg:w-1/4 h-96">
-                {testimonials.map((_, index) => (
-                  <img
+                {testimonials.map((testimonial, index) => (
+                  <div
                     key={`left-${index}`}
-                    src={testimonials[index].image}
-                    alt={`Testimonial ${index + 1}`}
-                    className="absolute w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-gray-300"
+                    className="absolute"
                     style={{
                       top: leftPositions[index].top,
                       left: leftPositions[index].left,
                     }}
                     ref={(el) => (leftImagesRef.current[index] = el)}
-                  />
+                  >
+                    <IconComponent testimonial={testimonial} size="text-2xl" />
+                  </div>
                 ))}
               </div>
 
               {/* Testimonial Carousel */}
               <div className="w-full lg:w-1/2 text-center" ref={testimonialRef}>
                 <div className="relative mb-8">
-                  <img
-                    src={testimonials[currentTestimonial].image}
-                    alt={testimonials[currentTestimonial].name}
-                    className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-2 border-gray-400 p-1 mx-auto"
-                  />
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4">
+                    <IconComponent
+                      testimonial={testimonials[currentTestimonial]}
+                      size="text-5xl sm:text-6xl"
+                    />
+                  </div>
                   <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-4 text-3xl text-blue-600">
-                    <i className="fa fa-quote-left"></i>
+                    <span className="text-6xl">"</span>
                   </div>
                 </div>
-                <p className="text-base sm:text-lg italic text-gray-300 mb-6 px-4">
-                  {testimonials[currentTestimonial].quote}
+                <p className="text-base sm:text-lg italic text-gray-300 mb-6 px-4 leading-relaxed">
+                  "{testimonials[currentTestimonial].quote}"
                 </p>
                 <hr className="w-16 mx-auto border-gray-400 mb-4" />
-                <h5 className="text-lg sm:text-xl font-semibold text-white">
+                <h5 className="text-lg sm:text-xl font-semibold text-white mb-1">
                   {testimonials[currentTestimonial].name}
                 </h5>
+                <p className="text-sm text-gray-400">
+                  {testimonials[currentTestimonial].profession}
+                </p>
 
                 {/* Navigation Dots */}
-                <div className="flex justify-center gap-2 mt-6">
+                <div className="flex justify-center gap-3 mt-8">
                   {testimonials.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentTestimonial(index)}
-                      className={`w-4 h-4 rounded-full ${
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
                         currentTestimonial === index
-                          ? "bg-blue-600"
-                          : "bg-yellow-400"
-                      } transition-colors`}
+                          ? "bg-blue-600 scale-125"
+                          : "bg-gray-600 hover:bg-gray-500"
+                      }`}
                     ></button>
                   ))}
+                </div>
+
+                {/* Navigation Arrows (Optional) */}
+                <div className="flex justify-center gap-4 mt-6">
+                  <button
+                    onClick={() =>
+                      setCurrentTestimonial(
+                        currentTestimonial === 0
+                          ? testimonials.length - 1
+                          : currentTestimonial - 1
+                      )
+                    }
+                    className="bg-gray-800 hover:bg-gray-700 text-white p-2 rounded-full transition-colors"
+                  >
+                    ←
+                  </button>
+                  <button
+                    onClick={() =>
+                      setCurrentTestimonial(
+                        currentTestimonial === testimonials.length - 1
+                          ? 0
+                          : currentTestimonial + 1
+                      )
+                    }
+                    className="bg-gray-800 hover:bg-gray-700 text-white p-2 rounded-full transition-colors"
+                  >
+                    →
+                  </button>
                 </div>
               </div>
 
               {/* Right Images */}
               <div className="hidden lg:block relative w-full lg:w-1/4 h-96">
-                {testimonials.map((_, index) => (
-                  <img
+                {testimonials.map((testimonial, index) => (
+                  <div
                     key={`right-${index}`}
-                    src={testimonials[index].image}
-                    alt={`Testimonial ${index + 1}`}
-                    className="absolute w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-gray-300"
+                    className="absolute"
                     style={{
                       top: rightPositions[index].top,
                       right: rightPositions[index].right,
                     }}
                     ref={(el) => (rightImagesRef.current[index] = el)}
-                  />
+                  >
+                    <IconComponent testimonial={testimonial} size="text-2xl" />
+                  </div>
                 ))}
               </div>
             </div>

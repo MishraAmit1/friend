@@ -79,9 +79,9 @@ const MyProjects = () => {
   return (
     <div className="bg-black text-white px-10 md:px-32 w-full" id="projects">
       <div className="container mx-auto py-8">
-        <h4 className="text-gray-400 uppercase">My Work</h4>
+        <h4 className="text-gray-400 uppercase">Experience</h4>
         <h1 className="md:text-5xl text-2xl mb-12 md:mb-6 text-left font-[amspiro2] tracking-wider font-extrabold">
-          Projects.
+          Industries I've Worked With.
         </h1>
         <p className="text-gray-500 mb-8">
           Over the past 1.5 years, I’ve had the opportunity to craft and execute
