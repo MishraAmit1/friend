@@ -1,10 +1,5 @@
-import React, { memo } from "react";
-import {
-  LinkedInIcon,
-  EmailIcon,
-  InstagramIcon,
-  GithubIcon,
-} from "./SocialIcons";
+import { memo } from "react";
+import { LinkedInIcon, EmailIcon, InstagramIcon } from "./SocialIcons";
 
 const SocialLink = memo(({ href, icon: Icon }) => (
   <li className="md:w-7 w-5 hover:text-white transition-colors duration-200">
@@ -20,7 +15,6 @@ const SocialLinks = memo(() => (
       href="https://www.linkedin.com/in/amsmishra/"
       icon={LinkedInIcon}
     />
-    <SocialLink href="https://github.com/MishraAmit1" icon={GithubIcon} />
     <SocialLink href="mailto:amitmishra7427@gmail.com" icon={EmailIcon} />
     <SocialLink
       href="https://www.instagram.com/__amit__1510/"

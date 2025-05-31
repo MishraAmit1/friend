@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import earth from "../assets/images/Techno/earth.jpg";
@@ -49,14 +49,14 @@ const Contactme = () => {
   };
 
   return (
-    <div className="text-white px-4 md:px-32 py-10 w-full">
+    <div className="text-white px-4 md:px-32 py-10 w-full -mt-8">
       <ToastContainer />
       <div className="container mx-auto py-8">
         <h4 className="text-gray-400 uppercase">Want to send me a message</h4>
         <h1 className="md:text-5xl text-2xl mb-12 md:mb-6 text-left font-[amspiro2] tracking-wider font-extrabold">
           Contact Me.
         </h1>
-        <div className="min-h-screen flex flex-col md:flex-row items-center justify-center p-6 gap-14">
+        <div className="min-h-screen flex flex-col md:flex-row items-center justify-center p-6 gap-14 -mt-16">
           <div className="w-full max-w-md bg-[#1B1535]/70 backdrop-blur-md p-8 rounded-lg shadow-lg">
             <form onSubmit={handleSubmit} method="POST">
               <div className="mb-4">

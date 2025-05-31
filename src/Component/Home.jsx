@@ -63,7 +63,7 @@ const Home = ({
   scrollToHome,
   scrollToAbout,
   scrollToExpertise,
-  scrollToProjects,
+  scrollToMyProjects,
   scrollToTestimonial,
   scrollToContact,
 }) => {
@@ -262,7 +262,7 @@ const Home = ({
             { name: "Home", action: scrollToHome },
             { name: "About Me", action: scrollToAbout },
             { name: "Expertise", action: scrollToExpertise },
-            { name: "Projects", action: scrollToProjects },
+            { name: "Projects", action: scrollToMyProjects },
             { name: "Testimonial", action: scrollToTestimonial },
             { name: "Contact Me", action: scrollToContact },
           ].map((item) => (

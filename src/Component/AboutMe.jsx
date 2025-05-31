@@ -33,7 +33,7 @@ const AboutMe = () => {
         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-28 text-left font-[amspiro2] tracking-wider font-extrabold">
           Crafting Digital Experiences
         </h1>
-        <section id="about" className="py-6 sm:py-12 lg:py-16 bg-black">
+        <section id="about" className="py-6 sm:py-12 lg:py-16 bg-black -mt-10">
           <div className="container mx-auto px-4">
             <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
               {/* Left Column */}
@@ -52,9 +52,10 @@ const AboutMe = () => {
                   </h3>
                 </div>
                 <p className="mb-4 text-sm sm:text-base text-gray-300 leading-relaxed">
-                  Hi, I'm Divya Bhanushali — a passionate and performance-driven Digital Marketer. 
-                  From crafting engaging content to running ROI-focused campaigns, I've been on a 
-                  mission to turn digital ideas into measurable results.
+                  Hi, I'm Divya Bhanushali — a passionate and performance-driven
+                  Digital Marketer. From crafting engaging content to running
+                  ROI-focused campaigns, I've been on a mission to turn digital
+                  ideas into measurable results.
                 </p>
                 <p className="mb-3 flex items-center text-sm sm:text-base text-gray-300">
                   <FaCheckCircle className="text-blue-600 mr-3 flex-shrink-0" />{" "}
@@ -88,10 +89,10 @@ const AboutMe = () => {
           </div>
         </section>
 
-        {/* Modal */}
+        {/* Modal - Fixed Responsive Design */}
         {isModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-            <div className="bg-gray-900 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            <div className="bg-gray-900 rounded-xl max-w-6xl w-full max-h-[90vh] overflow-y-auto relative">
               {/* Close Button */}
               <button
                 onClick={closeModal}
@@ -101,70 +102,87 @@ const AboutMe = () => {
               </button>
 
               {/* Modal Content */}
-              <div className="p-6 sm:p-8">
-                <div className="flex flex-col lg:flex-row gap-8">
-                  {/* Left side - Image */}
-                  <div className="lg:w-1/3">
-                    <img
-                      src={about1}
-                      alt="Divya Bhanushali - Digital Marketer"
-                      className="w-full h-64 lg:h-80 object-cover rounded-lg shadow-lg"
-                    />
+              <div className="p-4 sm:p-6 lg:p-8">
+                <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+                  {/* Left side - Image - Fixed Responsive Issues */}
+                  <div className="w-full lg:w-2/5 xl:w-1/3">
+                    <div className="relative">
+                      <img
+                        src={about1}
+                        alt="Divya Bhanushali - Digital Marketer"
+                        className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover rounded-lg shadow-lg"
+                      />
+                      {/* Optional: Add a gradient overlay for better text contrast */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+                    </div>
                   </div>
 
                   {/* Right side - Content */}
-                  <div className="lg:w-2/3">
-                    <h2 className="text-3xl font-bold text-white mb-6 font-[amspiro2]">
+                  <div className="w-full lg:w-3/5 xl:w-2/3">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6 font-[amspiro2]">
                       About Me
                     </h2>
-                    
-                    <div className="space-y-4 text-gray-300 leading-relaxed">
+
+                    <div className="space-y-3 sm:space-y-4 text-gray-300 leading-relaxed text-sm sm:text-base">
                       <p>
-                        Hi, I'm <span className="text-blue-400 font-semibold">Divya Bhanushali</span> — 
-                        a passionate and performance-driven Digital Marketer with 1.5 years of hands-on 
-                        experience in helping brands grow online. From crafting engaging content to running 
-                        ROI-focused campaigns, I've been on a mission to turn digital ideas into measurable results.
+                        Hi, I'm{" "}
+                        <span className="text-blue-400 font-semibold">
+                          Divya Bhanushali
+                        </span>{" "}
+                        — a passionate and performance-driven Digital Marketer
+                        with 1.5 years of hands-on experience in helping brands
+                        grow online. From crafting engaging content to running
+                        ROI-focused campaigns, I've been on a mission to turn
+                        digital ideas into measurable results.
                       </p>
-                      
+
                       <p>
-                        My journey began with a curiosity to understand how people interact with brands online. 
-                        Over time, that curiosity transformed into a deep understanding of how marketing channels 
-                        work — from SEO, social media marketing, paid ads, email marketing to brand storytelling.
+                        My journey began with a curiosity to understand how
+                        people interact with brands online. Over time, that
+                        curiosity transformed into a deep understanding of how
+                        marketing channels work — from SEO, social media
+                        marketing, paid ads, email marketing to brand
+                        storytelling.
                       </p>
-                      
+
                       <p>
-                        I've had the opportunity to work with multiple businesses, manage cross-platform strategies, 
-                        lead teams, and build engagement-driven campaigns. Whether it's boosting visibility or 
-                        generating leads, my goal is always the same: to deliver value, creatively and strategically.
+                        I've had the opportunity to work with multiple
+                        businesses, manage cross-platform strategies, lead
+                        teams, and build engagement-driven campaigns. Whether
+                        it's boosting visibility or generating leads, my goal is
+                        always the same: to deliver value, creatively and
+                        strategically.
                       </p>
                     </div>
 
-                    {/* Skills/Services */}
-                    <div className="mt-8">
-                      <h3 className="text-xl font-semibold text-white mb-4">My Expertise</h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div className="flex items-center text-gray-300">
-                          <FaCheckCircle className="text-blue-600 mr-3 flex-shrink-0" />
+                    {/* Skills/Services - Improved Mobile Layout */}
+                    <div className="mt-6 sm:mt-8">
+                      <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 sm:mb-4">
+                        My Expertise
+                      </h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                        <div className="flex items-center text-gray-300 text-sm sm:text-base">
+                          <FaCheckCircle className="text-blue-600 mr-2 sm:mr-3 flex-shrink-0 text-sm" />
                           SEO & Content Marketing
                         </div>
-                        <div className="flex items-center text-gray-300">
-                          <FaCheckCircle className="text-blue-600 mr-3 flex-shrink-0" />
+                        <div className="flex items-center text-gray-300 text-sm sm:text-base">
+                          <FaCheckCircle className="text-blue-600 mr-2 sm:mr-3 flex-shrink-0 text-sm" />
                           Social Media Marketing
                         </div>
-                        <div className="flex items-center text-gray-300">
-                          <FaCheckCircle className="text-blue-600 mr-3 flex-shrink-0" />
+                        <div className="flex items-center text-gray-300 text-sm sm:text-base">
+                          <FaCheckCircle className="text-blue-600 mr-2 sm:mr-3 flex-shrink-0 text-sm" />
                           Paid Advertising (PPC)
                         </div>
-                        <div className="flex items-center text-gray-300">
-                          <FaCheckCircle className="text-blue-600 mr-3 flex-shrink-0" />
+                        <div className="flex items-center text-gray-300 text-sm sm:text-base">
+                          <FaCheckCircle className="text-blue-600 mr-2 sm:mr-3 flex-shrink-0 text-sm" />
                           Email Marketing
                         </div>
-                        <div className="flex items-center text-gray-300">
-                          <FaCheckCircle className="text-blue-600 mr-3 flex-shrink-0" />
+                        <div className="flex items-center text-gray-300 text-sm sm:text-base">
+                          <FaCheckCircle className="text-blue-600 mr-2 sm:mr-3 flex-shrink-0 text-sm" />
                           Brand Storytelling
                         </div>
-                        <div className="flex items-center text-gray-300">
-                          <FaCheckCircle className="text-blue-600 mr-3 flex-shrink-0" />
+                        <div className="flex items-center text-gray-300 text-sm sm:text-base">
+                          <FaCheckCircle className="text-blue-600 mr-2 sm:mr-3 flex-shrink-0 text-sm" />
                           Campaign Management
                         </div>
                       </div>

@@ -126,7 +126,7 @@ const Testimonial = () => {
       className="bg-black text-white px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 w-full"
       id="testimonial"
     >
-      <div className="container mx-auto py-6 sm:py-8">
+      <div className="container mx-auto py-6 sm:py-8 mt-3">
         <h4 className="text-gray-400 uppercase text-xs sm:text-sm md:text-base">
           My Client Voices,
         </h4>
@@ -135,7 +135,7 @@ const Testimonial = () => {
         </h1>
         <section
           id="testimonial"
-          className="py-6 sm:py-12 lg:py-16 bg-black text-white"
+          className="py-6 sm:py-12 lg:py-16 bg-black text-white -mt-10"
         >
           <div className="container mx-auto px-4">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12">

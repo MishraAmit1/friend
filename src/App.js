@@ -3,7 +3,6 @@ import Home from "./Component/Home";
 import AboutMe from "./Component/AboutMe.jsx";
 import Expertise from "./Component/Expertise.jsx";
 import MyProjects from "./Component/MyProjects";
-import Projects from "./Component/Projects.jsx";
 import Testimonial from "./Component/Testimonial";
 import Contactme from "./Component/Contactme";
 import Footer from "./Component/Footer";
@@ -14,7 +13,6 @@ function App() {
   const aboutRef = useRef(null);
   const expertiseRef = useRef(null);
   const myProjectsRef = useRef(null);
-  const projectsRef = useRef(null);
   const testimonialRef = useRef(null);
   const contactRef = useRef(null);
   const footerRef = useRef(null);
@@ -35,10 +33,6 @@ function App() {
     myProjectsRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  const scrollToProjects = () => {
-    projectsRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
   const scrollToTestimonial = () => {
     testimonialRef.current.scrollIntoView({ behavior: "smooth" });
   };
@@ -53,35 +47,34 @@ function App() {
 
   return (
     <div>
-      <div id="main" ref={homeRef}>
+      <div id="home" ref={homeRef}>
         <Home
           scrollToHome={scrollToHome}
           scrollToAbout={scrollToAbout}
           scrollToExpertise={scrollToExpertise}
           scrollToMyProjects={scrollToMyProjects}
-          scrollToProjects={scrollToProjects}
           scrollToTestimonial={scrollToTestimonial}
           scrollToContact={scrollToContact}
           scrollToFooter={scrollToFooter}
         />
       </div>
 
-      <div ref={aboutRef}>
+      <div id="about" ref={aboutRef}>
         <AboutMe />
       </div>
-      <div ref={expertiseRef}>
+      <div id="expertise" ref={expertiseRef}>
         <Expertise />
       </div>
-      <div ref={myProjectsRef}>
+      <div id="projects" ref={myProjectsRef}>
         <MyProjects />
       </div>
-      <div ref={testimonialRef}>
+      <div id="testimonial" ref={testimonialRef}>
         <Testimonial />
       </div>
-      <div ref={contactRef}>
+      <div id="contact" ref={contactRef}>
         <Contactme />
       </div>
-      <div ref={footerRef}>
+      <div id="footer" ref={footerRef}>
         <Footer />
       </div>
     </div>
@@ -89,13 +82,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <Experience /> */
-}
-
-{
-  /* <div ref={aboutRef}>
-        <Technologies />
-      </div> */
-}

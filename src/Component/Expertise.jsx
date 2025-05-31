@@ -90,7 +90,7 @@ const Expertise = () => {
   return (
     <div
       className="bg-black text-white px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 w-full"
-      id="skill"
+      id="education"
     >
       <div className="container mx-auto py-6 sm:py-8">
         <h4 className="text-gray-400 uppercase text-xs sm:text-sm md:text-base">
@@ -99,7 +99,7 @@ const Expertise = () => {
         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-28 text-left font-[amspiro2] tracking-wider font-extrabold">
           Crafting Digital Experiences
         </h1>
-        <section id="skill" className="py-6 sm:py-12 lg:py-16 bg-black">
+        <section id="skill" className="py-6 sm:py-12 lg:py-16 bg-black -mt-10">
           <div className="container mx-auto px-4">
             <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
               {/* Left Column: Skills */}

@@ -1,10 +1,4 @@
-import React from "react";
-import {
-  EmailIcon,
-  GithubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-} from "./svgicons/SocialIcons";
+import { EmailIcon, InstagramIcon, LinkedInIcon } from "./svgicons/SocialIcons";
 
 const Footer = () => {
   // Function to scroll to a section
@@ -67,9 +61,9 @@ const Footer = () => {
           <ul className="flex flex-wrap gap-6 sm:gap-8 md:gap-10 text-sm md:text-base font-medium">
             {[
               { id: "home", label: "Home" },
-              { id: "technologies", label: "About Me" },
-              { id: "education", label: "Projects" },
-              { id: "projects", label: "Expertise" },
+              { id: "about", label: "About Me" }, // Changed from "technologies"
+              { id: "expertise", label: "Expertise" }, // Changed from "education"
+              { id: "projects", label: "Projects" },
               {
                 href: "https://drive.google.com/file/d/12inpT6-AVSEgDUSnTsX8rCC3ctrP2tMi/view?usp=sharing",
                 label: "Resume",
