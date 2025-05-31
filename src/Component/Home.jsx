@@ -65,48 +65,12 @@ const Home = ({
 
       <section className="relative z-10 flex flex-col min-h-screen text-white">
         {/* Header */}
-        <style jsx>{`
-          .rotating-border {
-            animation: rotate 3s linear infinite;
-          }
-
-          @keyframes rotate {
-            from {
-              transform: rotate(0deg);
-            }
-            to {
-              transform: rotate(360deg);
-            }
-          }
-
-          .gradient-border {
-            background: linear-gradient(
-              45deg,
-              #3b82f6,
-              #8b5cf6,
-              #ec4899,
-              #3b82f6
-            );
-            background-size: 400% 400%;
-            animation: gradientShift 2s ease infinite;
-          }
-
-          @keyframes gradientShift {
-            0%,
-            100% {
-              background-position: 0% 50%;
-            }
-            50% {
-              background-position: 100% 50%;
-            }
-          }
-        `}</style>
         <header className="flex items-center justify-between w-full px-6 py-4 md:px-8 md:py-6">
           <div className="flex items-center">
             {/* Rotating Border Logo */}
             <div className="relative w-16 h-16 md:w-20 md:h-20">
               {/* Rotating Border with Dots */}
-              <div className="absolute inset-0 animate-spin">
+              <div className="absolute inset-0 animate-spin [animation-duration:3s]">
                 {/* Rectangular Border */}
                 <div className="w-full h-full border-2 border-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg p-[2px]">
                   <div className="w-full h-full bg-black rounded-lg"></div>
@@ -121,6 +85,9 @@ const Home = ({
                 </div>
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
                   <div className="w-3 h-3 bg-pink-500 rounded-full"></div>
+                </div>
+                <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                 </div>
               </div>
 
@@ -168,7 +135,7 @@ const Home = ({
               Hello, I'm
             </h3>
             <h1 className="text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl font-['Spartan'] mt-2 mb-4">
-              Divya Bhanusali
+              Divya Bhanushali
             </h1>
             <p className="text-lg italic text-gray-300 font-['Merriweather'] mb-8 md:text-xl lg:text-2xl">
               Digital Marketing Expert
@@ -196,7 +163,7 @@ const Home = ({
               <div className="absolute inset-0 rounded-full opacity-50 -z-10"></div>
               <img
                 src={profileImage}
-                alt="Divya Bhanusali"
+                alt="Divya Bhanushali"
                 className="relative z-10 w-full rounded-lg shadow-2xl md:rounded-2xl"
               />
             </div>

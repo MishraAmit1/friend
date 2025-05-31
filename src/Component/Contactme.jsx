@@ -21,7 +21,7 @@ const Contactme = () => {
     setLoading(true);
     const form = e.target;
 
-    fetch("https://getform.io/f/azyyogvb", {
+    fetch("https://getform.io/f/bxoyyjza", {
       method: "POST",
       body: new FormData(form),
     })
