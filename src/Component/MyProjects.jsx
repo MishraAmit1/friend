@@ -13,10 +13,9 @@ const MyProjects = () => {
       image: project1,
       title: "Real Estate",
       description: [
-        "Helped real estate brands increase lead generation through targeted Meta Ads and Google Ads.",
-        "Created location-based lead forms",
-        "Built trust through content showcasing projects, testimonials & site progress",
-        "Focused on high-quality lead nurturing and CRM coordination",
+        "Boosted lead generation with targeted Meta & Google Ads.",
+        "Used location-based lead forms for better conversions",
+        "Built trust with project content, testimonials & progress updates",
       ],
     },
     {
@@ -25,9 +24,8 @@ const MyProjects = () => {
       title: "Education (Schools, Institutes & Online Courses)",
       description: [
         "Promoted institutions with a focus on admissions, awareness, and engagement.",
-        "Developed admission-focused ad campaigns",
-        "Created engaging content for parents & students",
-        "Managed content calendars for regular and exam-season promotions",
+        "Engaged parents & students with targeted content",
+        "Ran admission-focused ad campaigns",
       ],
     },
     {
@@ -35,10 +33,9 @@ const MyProjects = () => {
       image: project3,
       title: "Machinery / Calibration Industry",
       description: [
-        "B2B strategy for technical products and niche services.",
-        "Focused on brand visibility via SEO and LinkedIn",
-        "Designed educational content for industrial products and services",
-        "Generated quality leads using professional and technical creatives",
+        "B2B marketing via SEO & LinkedIn for brand visibility",
+        "Created technical & educational content",
+        "Generated quality leads with targeted creatives",
       ],
     },
     {
@@ -46,10 +43,9 @@ const MyProjects = () => {
       image: project4, // Placeholder; replace with actual image
       title: "Food, Café & Restaurant",
       description: [
-        "Improved footfall and online orders through creative storytelling.",
-        "Designed mouth-watering social media content and reels",
+        "IBoosted footfall & orders with creative storytelling",
         "Managed offers, reviews, and Google Business listings",
-        "Ran geo-targeted promotions to drive in-store traffic",
+        "Designed engaging content & reels",
       ],
     },
     {
@@ -57,10 +53,9 @@ const MyProjects = () => {
       image: project5, // Placeholder; replace with actual image
       title: "Automotive Industry",
       description: [
-        "Worked with auto service centers, detailing studios, and dealerships.",
-        "Promoted services via Instagram/Facebook Ads",
-        "Designed before-after visuals and reviews for trust building",
-        "Managed local SEO and service-based lead generation",
+        "Promoted services with Meta Ads & local SEO",
+        "Built trust through before-after visuals & reviews",
+        "Generated leads for service centers & dealerships",
       ],
     },
     {
@@ -69,9 +64,8 @@ const MyProjects = () => {
       title: "Hospitals, Gyms & Internet Providers",
       description: [
         "Handled a mix of healthcare, fitness, and service-based local businesses.",
-        "Ran health awareness and gym transformation campaigns",
-        "Focused on lead generation and appointment bookings",
-        "Designed informative content, reels, and engagement polls",
+        "Generated leads & booked appointments",
+        "Created informative content, reels & polls",
       ],
     },
   ];
@@ -102,9 +96,9 @@ const MyProjects = () => {
               <div
                 className="bg-[#1B1535] text-white rounded-lg shadow-md p-4 relative flex flex-col overflow-y-auto"
                 style={{
-                  height: "450px",
-                  minHeight: "450px",
-                  maxHeight: "450px",
+                  height: "400px",
+                  minHeight: "400px",
+                  maxHeight: "400px",
                 }}
               >
                 {/* Project Image */}

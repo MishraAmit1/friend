@@ -9,6 +9,56 @@ import { ArrowIconDown, Telephone, Whatsapp } from "./svgicons/SocialIcons";
 // Placeholder image (replace with actual path in your project)
 import profileImage from "../assets/images/profile2-removebg-preview.png";
 
+// Typewriter Animation Hook
+const useTypewriter = (texts, speed = 100, deleteSpeed = 50, pause = 2000) => {
+  const [currentText, setCurrentText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [textIndex, setTextIndex] = useState(0);
+
+  useEffect(() => {
+    const timeout = setTimeout(
+      () => {
+        const currentFullText = texts[textIndex];
+
+        if (!isDeleting) {
+          // Typing
+          if (currentIndex < currentFullText.length) {
+            setCurrentText(currentFullText.substring(0, currentIndex + 1));
+            setCurrentIndex(currentIndex + 1);
+          } else {
+            // Pause before deleting
+            setTimeout(() => setIsDeleting(true), pause);
+          }
+        } else {
+          // Deleting
+          if (currentIndex > 0) {
+            setCurrentText(currentFullText.substring(0, currentIndex - 1));
+            setCurrentIndex(currentIndex - 1);
+          } else {
+            setIsDeleting(false);
+            setTextIndex((textIndex + 1) % texts.length);
+          }
+        }
+      },
+      isDeleting ? deleteSpeed : speed
+    );
+
+    return () => clearTimeout(timeout);
+  }, [
+    currentText,
+    currentIndex,
+    isDeleting,
+    textIndex,
+    texts,
+    speed,
+    deleteSpeed,
+    pause,
+  ]);
+
+  return currentText;
+};
+
 const Home = ({
   scrollToHome,
   scrollToAbout,
@@ -28,6 +78,12 @@ const Home = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const hamburgerRef = useRef(null);
+
+  // Typewriter effect for the professional titles
+  const typewriterText = useTypewriter([
+    "Digital Marketing Expert",
+    "Social Media Marketer",
+  ]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -137,9 +193,13 @@ const Home = ({
             <h1 className="text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl font-['Spartan'] mt-2 mb-4">
               Divya Bhanushali
             </h1>
-            <p className="text-lg italic text-gray-300 font-['Merriweather'] mb-8 md:text-xl lg:text-2xl">
-              Digital Marketing Expert
+
+            {/* Updated typewriter text with cursor */}
+            <p className="text-lg italic text-gray-300 font-['Merriweather'] mb-8 md:text-xl lg:text-2xl h-8 md:h-10 lg:h-12 flex items-center justify-center md:justify-start">
+              {typewriterText}
+              <span className="ml-1 animate-pulse text-[#4595eb]">|</span>
             </p>
+
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
               <a
                 href="https://drive.google.com/file/d/12inpT6-AVSEgDUSnTsX8rCC3ctrP2tMi/view?usp=sharing"

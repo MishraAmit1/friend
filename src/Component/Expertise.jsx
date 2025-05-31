@@ -64,7 +64,7 @@ const Expertise = () => {
     },
     {
       title: "Founder | Digital Marketing Educator",
-      period: "2024 – Present",
+      period: "2025 – Present",
       company: "Soch Digital",
       achievements: [
         "Building a learning platform for digital marketing beginners and small business owners.",
@@ -107,11 +107,6 @@ const Expertise = () => {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 text-white">
                   Skills & Experience
                 </h1>
-                <p className="mb-4 text-sm sm:text-base text-gray-300">
-                  Stet no et lorem dolor et diam, amet duo ut dolore vero eos.
-                  No stet est diam rebum amet diam ipsum clita dolor duo clita
-                  sit.
-                </p>
                 <h3 className="mb-4 text-xl sm:text-2xl font-semibold text-white">
                   My Skills
                 </h3>
