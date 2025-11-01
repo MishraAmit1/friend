@@ -65,7 +65,7 @@ const Footer = () => {
               { id: "expertise", label: "Expertise" }, // Changed from "education"
               { id: "projects", label: "Projects" },
               {
-                href: "https://drive.google.com/file/d/1pV6pb7NA3n7YI0GY8SLneMD6FsJe0tN2/view?usp=sharing",
+                href: "https://drive.google.com/file/d/1uE-wl-E_jyazZR0LbMYykFMf2kydNtsS/view",
                 label: "Resume",
                 external: true,
               },

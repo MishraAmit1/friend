@@ -7,7 +7,7 @@ import particleConfig from "../particlesjs/particleConfig";
 import { ArrowIconDown, Telephone, Whatsapp } from "./svgicons/SocialIcons";
 
 // Placeholder image (replace with actual path in your project)
-import profileImage from "../assets/images/profile2-removebg-preview.png";
+import profileImage from "../assets/images/Untitled_design-removebg-preview.png";
 
 // Typewriter Animation Hook
 const useTypewriter = (texts, speed = 100, deleteSpeed = 50, pause = 2000) => {
@@ -202,7 +202,7 @@ const Home = ({
 
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
               <a
-                href="https://drive.google.com/file/d/1pV6pb7NA3n7YI0GY8SLneMD6FsJe0tN2/view?usp=sharing"
+                href="https://drive.google.com/file/d/1uE-wl-E_jyazZR0LbMYykFMf2kydNtsS/view"
                 download
                 className="px-6 py-3 text-sm font-bold text-white transition-all duration-300 rounded-lg md:px-8 md:py-3 md:text-base bg-gradient-to-r from-[#1595b6] to-[#1f2667e6] hover:scale-105 hover:shadow-lg"
               >
@@ -218,15 +218,19 @@ const Home = ({
           </div>
 
           {/* Profile Image */}
-          <div className="w-full max-w-xs md:max-w-md md:w-1/2">
-            <div className="relative">
-              <div className="absolute inset-0 rounded-full opacity-50 -z-10"></div>
-              <img
-                src={profileImage}
-                alt="Divya Bhanushali"
-                className="relative z-10 w-full rounded-lg shadow-2xl md:rounded-2xl"
-              />
-            </div>
+          <div className="w-full max-w-md md:max-w-xl lg:max-w-2xl relative group">
+            <img
+              src={profileImage}
+              alt="Divya Bhanushali"
+              className="w-full h-auto rounded-2xl shadow-2xl object-contain"
+            />
+
+            {/* Light vignette on borders */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-black/10 via-transparent to-black/10 pointer-events-none"></div>
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-black/10 via-transparent to-black/10 pointer-events-none"></div>
+
+            {/* Smooth fade at bottom */}
+            <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black via-black/30 to-transparent rounded-b-2xl pointer-events-none"></div>
           </div>
         </main>
 

@@ -83,7 +83,7 @@ const Expertise = () => {
     {
       title: "Bachelor of Computer Application (BCA)",
       period: "2021 - 2023",
-      institute: "Rajju Shroff Rofel University - Vapi, Gujarat",
+      institute: "VNSGU University, Gujarat",
     },
   ];
 
